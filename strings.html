@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    Alverse Ivey
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome Checker</title> <!-- This is the title that shows on the browser tab -->
+</head>
+<body>
+    <h1>Palindrome Checker</h1> <!-- This is the main title on the page -->
+    <script>
+        // Start a loop that will keep asking the user for input
+        while (true) {
+            // Ask the user to enter a word or phrase
+            let input = prompt("level:");
+            // If the user cancels or doesn't type anything, stop the loop
+            if (!input) break;
+            // Remove spaces and change everything to lowercase for easy checking
+            let cleanInput = input.replace(/\s+/g, '').toLowerCase();
+            // Check if the cleaned input is a palindrome and show a message
+            alert(`${input} is ${cleanInput === cleanInput.split('').reverse().join('') ? "" : "not "}a palindrome.`);
+            // Ask the user if they want to check another word
+            if (!confirm("Check another?")) break; // Stop if the user clicks "Cancel"
+        }
+    </script>
+</body>
+</html>
