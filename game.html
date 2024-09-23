@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game </title>
+    <link rel="stylesheet" href="main.css"> 
+</head>
+<body>
+    <h1>Dice Game click the button below</h1>
+    <button id="btn" onclick="rollDice()">Roll Dice</button>
+    <!--Output of the first dice roll -->
+    <p id="Die1"></p>
+    <!--Output of the second dice roll-->
+    <p id="Die2"></p>
+    <!--Output the condition based upon the sum of the dice-->
+    <p id="Results"></p>
+    <script>
+        function rollDice(){
+            //set variables for the minimum number of 1 and maximum of 6 
+            let minDieNumber = 1;
+            let maxDieNumber = 6;
+           
+            /* The syntax Math.floor(Math.random() * (maxDieNumber - minDieNumber + 1)) + minDieNumber is used to 
+               ensure that the minimum random number will always be 1 
+               and the maximum random number will always be 6 
+            */
+            let x = Math.floor(Math.random() * (maxDieNumber - minDieNumber + 1)) + minDieNumber;
+            let y = Math.floor(Math.random() * (maxDieNumber - minDieNumber + 1)) + minDieNumber;
+
+            //output the results to the user 
+            document.getElementById("Die1").innerHTML = " You rolled a [" + x + "] on the face of die #1"; 
+            document.getElementById("Die2").innerHTML = " You rolled a [" + y + "] on the face of die #2"; 
+
+            //add the two dice numbers together 
+            let rollTotal = x + y; 
+
+            //Process return the results to the user by using a condition 
+            if (rollTotal == 7){
+                document.getElementById("Results").innerHTML = "You rolled a 7! ****GREAT JOB!**** YOU WIN!"
+            }
+            //if 11 display lose message 
+            else if (rollTotal == 11) {
+                document.getElementById("Results").innerHTML = "****You rolled an 11! Sorry You lose****!"
+            }
+            //if it is not a 7 or 11 display a push message 
+            else{
+                document.getElementById("Results").innerHTML = "This roll is a push! Try again"
+            }
+        }
+         
+        
+    </script>
+
+
+</body>
+</html>
