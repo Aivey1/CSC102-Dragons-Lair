@@ -1,0 +1,31 @@
+
+<!-- Created by Alverse Ivey -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meme Image Mover</title>
+  <style>
+    /* Add some basic styling to make the page look nice */
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    #meme-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <!-- Create the Start button -->
+  <button id="start-button" onclick="startImageMovement()">Start</button>
+  <!-- Create the Stop button -->
+  <button id="stop-button" onclick="stopImageMovement()">Stop</button>
+  <!-- Add the meme image -->
+  <img id="meme-image" src="meme.jpg" alt="Meme Image">
+  <script src="script.js"></script>
+</body>
+</html>
